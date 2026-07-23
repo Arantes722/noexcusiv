@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ShieldCheck, Truck, RotateCcw, CheckCircle2 } from "lucide-react";
 
 import { products } from "@/constants/products";
 
@@ -6,36 +7,24 @@ import { ProductGallery } from "@/components/shop/ProductGallery";
 import { ProductDetails } from "@/components/shop/ProductDetails";
 import { DropBanner } from "@/components/shop/DropBanner";
 
-
 type Props = {
   params: Promise<{
     slug: string;
   }>;
 };
 
-
 export default async function ProductPage({ params }: Props) {
-
   const { slug } = await params;
 
-
-  const product = products.find(
-    (item) => item.slug === slug
-  );
-
+  const product = products.find((item) => item.slug === slug);
 
   if (!product) {
     return (
       <main className="pt-32 text-center">
-
-        <h1 className="text-4xl font-bold">
-          Product not found
-        </h1>
-
+        <h1 className="text-4xl font-bold">Product not found</h1>
       </main>
     );
   }
-
 
   return (
     <main
@@ -47,8 +36,6 @@ export default async function ProductPage({ params }: Props) {
         pt-32
       "
     >
-
-
       {/* PRODUCT HERO */}
 
       <div
@@ -58,16 +45,9 @@ export default async function ProductPage({ params }: Props) {
           lg:grid-cols-2
         "
       >
-
-
         {/* GALERIA */}
 
-        <ProductGallery
-          images={product.gallery}
-          name={product.name}
-        />
-
-
+        <ProductGallery images={product.gallery} name={product.name} />
 
         {/* INFO */}
 
@@ -78,8 +58,6 @@ export default async function ProductPage({ params }: Props) {
             justify-center
           "
         >
-
-
           <p
             className="
               text-sm
@@ -91,8 +69,6 @@ export default async function ProductPage({ params }: Props) {
             {product.collection}
           </p>
 
-
-
           <h1
             className="
               mt-6
@@ -102,9 +78,6 @@ export default async function ProductPage({ params }: Props) {
           >
             {product.name}
           </h1>
-
-
-
 
           <p
             className="
@@ -116,9 +89,6 @@ export default async function ProductPage({ params }: Props) {
             {product.description}
           </p>
 
-
-
-
           <div
             className="
               mt-8
@@ -129,8 +99,6 @@ export default async function ProductPage({ params }: Props) {
             €{product.price}
           </div>
 
-
-
           <p
             className="
               mt-3
@@ -140,9 +108,6 @@ export default async function ProductPage({ params }: Props) {
           >
             Made on demand • Ships worldwide
           </p>
-
-
-
 
           <Link
             href={`/checkout/${product.slug}`}
@@ -163,86 +128,54 @@ export default async function ProductPage({ params }: Props) {
             Buy Now
           </Link>
 
-
-
-
           {/* DROP BANNER */}
 
           <DropBanner />
 
-
-
-
-
-          {/* FEATURES */}
+          {/* TRUST BOX */}
 
           <div
             className="
-              mt-10
-              space-y-4
-              border-t
+              mt-8
+              rounded-3xl
+              border
               border-white/10
-              pt-8
-              text-sm
-              text-white/50
+              bg-white/5
+              p-6
+              space-y-5
             "
           >
+            <div className="flex items-center gap-3">
+              <CheckCircle2 size={20} />
+              <span>In Stock</span>
+            </div>
 
+            <div className="flex items-center gap-3">
+              <Truck size={20} />
+              <span>Processing: 2–5 business days</span>
+            </div>
 
-            <p>
-              ✓ Premium quality product
-            </p>
+            <div className="flex items-center gap-3">
+              <Truck size={20} />
+              <span>Estimated delivery: 5–15 business days</span>
+            </div>
 
+            <div className="flex items-center gap-3">
+              <RotateCcw size={20} />
+              <span>14-Day Returns</span>
+            </div>
 
-
-            <p>
-              ✓ Designed by NOEXCUSIV
-            </p>
-
-
-
-            <p>
-              ✓ Worldwide shipping available
-            </p>
-
-
-
-            <p>
-              ✓ Processing time: 2-5 business days
-            </p>
-
-
-
-            <p>
-              ✓ Estimated delivery: 5-15 business days
-            </p>
-
-
-
-            <p>
-              ✓ Tracking number provided after shipment
-            </p>
-
-
-
+            <div className="flex items-center gap-3">
+              <ShieldCheck size={20} />
+              <span>Secure payments powered by Stripe</span>
+            </div>
           </div>
-
-
         </div>
-
-
       </div>
-
-
-
-
 
       {/* PRODUCT DETAILS */}
 
       <ProductDetails />
-
-
-
     </main>
   );
 }
