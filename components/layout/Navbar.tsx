@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+
 export function Navbar() {
   return (
     <header
@@ -14,6 +15,7 @@ export function Navbar() {
         backdrop-blur
       "
     >
+
       <nav
         className="
           mx-auto
@@ -21,17 +23,23 @@ export function Navbar() {
           max-w-7xl
           items-center
           justify-between
+          gap-4
           px-6
           py-5
         "
       >
 
+
+        {/* LOGO */}
+
         <Link
           href="/"
           className="
-            text-xl
+            shrink-0
+            text-lg
             font-bold
-            tracking-[0.3em]
+            tracking-[0.25em]
+            sm:text-xl
           "
         >
           NOEXCUSIV.
@@ -39,14 +47,18 @@ export function Navbar() {
 
 
 
+        {/* LINKS */}
+
         <div
           className="
             flex
             items-center
-            gap-8
-            text-sm
+            gap-4
+            text-xs
             uppercase
             tracking-widest
+            sm:gap-8
+            sm:text-sm
           "
         >
 
@@ -72,20 +84,11 @@ export function Navbar() {
           </Link>
 
 
-          <Link
-            href="/about"
-            className="
-              transition
-              hover:opacity-70
-            "
-          >
-            About
-          </Link>
-
-
         </div>
 
+
       </nav>
+
     </header>
   );
 }
