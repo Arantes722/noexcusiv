@@ -4,11 +4,17 @@ import Image from "next/image";
 import { products } from "@/data/products";
 import { BrandSection } from "@/components/home/BrandSection";
 
+
 export default function Home() {
+
   const product = products[0];
 
+
   return (
+
     <main>
+
+
       {/* HERO */}
 
       <section
@@ -22,7 +28,13 @@ export default function Home() {
           text-center
         "
       >
-        <div className="max-w-5xl">
+
+        <div
+          className="
+            max-w-5xl
+          "
+        >
+
           <p
             className="
               text-sm
@@ -34,19 +46,25 @@ export default function Home() {
             NOEXCUSIV
           </p>
 
+
+
           <h1
             className="
               mt-6
               text-7xl
-              md:text-9xl
               font-bold
               tracking-tight
+              md:text-9xl
             "
           >
+
             NO
             <br />
             EXCUSES.
+
           </h1>
+
+
 
           <p
             className="
@@ -57,9 +75,12 @@ export default function Home() {
               text-white/60
             "
           >
-            A movement built for people who choose discipline, consistency and
-            results.
+            Built for people who refuse excuses,
+            chase progress and demand more from themselves.
           </p>
+
+
+
 
           <Link
             href="/shop/first-drop-cap"
@@ -70,19 +91,26 @@ export default function Home() {
               bg-white
               px-10
               py-4
-              text-black
               font-bold
-              hover:scale-105
+              text-black
               transition
+              hover:scale-105
             "
           >
             Shop First Drop
           </Link>
+
+
         </div>
+
       </section>
 
 
-      {/* PRODUCT */}
+
+
+
+      {/* FEATURED PRODUCT */}
+
 
       <section
         className="
@@ -92,14 +120,18 @@ export default function Home() {
           py-24
         "
       >
+
+
         <div
           className="
             grid
+            items-center
             gap-12
             md:grid-cols-2
-            items-center
           "
         >
+
+
 
           <div
             className="
@@ -110,21 +142,32 @@ export default function Home() {
           >
 
             <Image
+
               src={product.image}
+
               alt={product.name}
+
               width={700}
+
               height={700}
+
               priority
+
               className="
                 w-full
                 rounded-2xl
               "
+
             />
 
           </div>
 
 
+
+
+
           <div>
+
 
             <p
               className="
@@ -138,6 +181,9 @@ export default function Home() {
             </p>
 
 
+
+
+
             <h2
               className="
                 mt-4
@@ -147,6 +193,9 @@ export default function Home() {
             >
               {product.name}
             </h2>
+
+
+
 
 
             <p
@@ -160,6 +209,25 @@ export default function Home() {
             </p>
 
 
+
+
+
+            <p
+              className="
+                mt-4
+                text-sm
+                uppercase
+                tracking-widest
+                text-white/40
+              "
+            >
+              First Drop • Limited Availability
+            </p>
+
+
+
+
+
             <div
               className="
                 mt-8
@@ -171,8 +239,11 @@ export default function Home() {
             </div>
 
 
+
+
+
             <Link
-              href="/shop/first-drop-cap"
+              href={`/shop/${product.slug}`}
               className="
                 mt-8
                 inline-flex
@@ -180,8 +251,10 @@ export default function Home() {
                 bg-white
                 px-10
                 py-4
-                text-black
                 font-bold
+                text-black
+                transition
+                hover:scale-105
               "
             >
               Buy Now
@@ -190,13 +263,21 @@ export default function Home() {
 
           </div>
 
+
         </div>
+
 
       </section>
 
 
+
+
+
       <BrandSection />
 
+
     </main>
+
   );
+
 }

@@ -1,63 +1,204 @@
+import { Container } from "@/components/ui/container";
+import { Section } from "@/components/ui/section";
+
+
 export function BrandSection() {
+
   return (
-    <section
-      className="
-        px-6
-        py-32
-      "
+
+    <Section
+      id="brand"
+      className="bg-zinc-950"
     >
 
-      <div
-        className="
-          mx-auto
-          max-w-5xl
-          text-center
-        "
-      >
+      <Container>
 
-        <p
-          className="
-            text-sm
-            uppercase
-            tracking-[0.5em]
-            text-white/40
-          "
-        >
-          The Movement
-        </p>
-
-
-        <h2
-          className="
-            mt-8
-            text-5xl
-            md:text-7xl
-            font-bold
-          "
-        >
-          DISCIPLINE
-          <br />
-          OVER EXCUSES.
-        </h2>
-
-
-        <p
+        <div
           className="
             mx-auto
-            mt-8
-            max-w-2xl
-            text-xl
-            text-white/60
+            max-w-4xl
+            text-center
           "
         >
-          NOEXCUSIV was created for those who refuse
-          to settle. Every piece represents consistency,
-          ambition and the mindset to keep moving forward.
-        </p>
+
+          <p
+            className="
+              mb-4
+              text-sm
+              font-semibold
+              uppercase
+              tracking-[0.3em]
+              text-zinc-500
+            "
+          >
+            THE NOEXCUSIV MINDSET
+          </p>
 
 
-      </div>
 
-    </section>
+
+          <h2
+            className="
+              text-4xl
+              font-black
+              leading-tight
+              md:text-6xl
+            "
+          >
+            We don't sell clothes.
+            <br />
+            We represent discipline.
+          </h2>
+
+
+
+
+
+          <p
+            className="
+              mx-auto
+              mt-8
+              max-w-2xl
+              text-lg
+              leading-8
+              text-zinc-400
+            "
+          >
+            NOEXCUSIV was created for people who refuse
+            average. Every piece represents consistency,
+            ambition and the commitment to become better
+            every single day.
+          </p>
+
+
+
+
+
+          <div
+            className="
+              mt-12
+              grid
+              gap-6
+              md:grid-cols-3
+            "
+          >
+
+
+            <div
+              className="
+                rounded-3xl
+                border
+                border-white/10
+                bg-black
+                p-6
+              "
+            >
+
+              <h3
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Discipline
+              </h3>
+
+              <p
+                className="
+                  mt-3
+                  text-sm
+                  text-white/50
+                "
+              >
+                Progress starts when motivation ends.
+              </p>
+
+            </div>
+
+
+
+
+
+            <div
+              className="
+                rounded-3xl
+                border
+                border-white/10
+                bg-black
+                p-6
+              "
+            >
+
+              <h3
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Consistency
+              </h3>
+
+              <p
+                className="
+                  mt-3
+                  text-sm
+                  text-white/50
+                "
+              >
+                Small actions create big results.
+              </p>
+
+            </div>
+
+
+
+
+
+            <div
+              className="
+                rounded-3xl
+                border
+                border-white/10
+                bg-black
+                p-6
+              "
+            >
+
+              <h3
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Growth
+              </h3>
+
+              <p
+                className="
+                  mt-3
+                  text-sm
+                  text-white/50
+                "
+              >
+                Never settle for your current level.
+              </p>
+
+            </div>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+      </Container>
+
+
+    </Section>
+
   );
+
 }

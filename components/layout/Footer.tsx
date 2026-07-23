@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+
 export function Footer() {
   return (
     <footer
@@ -14,12 +15,10 @@ export function Footer() {
       <div
         className="
           mx-auto
+          grid
           max-w-7xl
-          flex
-          flex-col
           gap-10
-          md:flex-row
-          md:justify-between
+          md:grid-cols-3
         "
       >
 
@@ -30,9 +29,8 @@ export function Footer() {
 
           <h2
             className="
-              text-2xl
+              text-xl
               font-bold
-              tracking-widest
             "
           >
             NOEXCUSIV
@@ -42,112 +40,140 @@ export function Footer() {
           <p
             className="
               mt-4
-              max-w-xs
               text-sm
               text-white/50
             "
           >
-            Discipline over excuses.
-            Built for those who keep moving forward.
+            Premium mindset clothing.
+            Built for those who refuse excuses.
           </p>
+
 
         </div>
 
 
 
-        {/* LINKS */}
 
-        <div
-          className="
-            flex
-            gap-12
-          "
-        >
 
-          <div>
+        {/* STORE */}
 
-            <h3
-              className="
-                text-sm
-                uppercase
-                tracking-widest
-                text-white/40
-              "
+        <div>
+
+          <h3
+            className="
+              font-bold
+            "
+          >
+            Store
+          </h3>
+
+
+          <div
+            className="
+              mt-4
+              flex
+              flex-col
+              gap-3
+              text-sm
+              text-white/50
+            "
+          >
+
+            <Link
+              href="/shop"
+              className="hover:text-white"
             >
               Shop
-            </h3>
+            </Link>
 
 
-            <div
-              className="
-                mt-4
-                flex
-                flex-col
-                gap-3
-              "
+            <Link
+              href="/about"
+              className="hover:text-white"
             >
+              About
+            </Link>
 
-              <Link href="/shop">
-                Shop
-              </Link>
 
-              <Link href="/shop/no-excuses-hat">
-                First Drop
-              </Link>
+            <Link
+              href="/shipping"
+              className="hover:text-white"
+            >
+              Shipping Policy
+            </Link>
 
-            </div>
+
+            <Link
+              href="/refund"
+              className="hover:text-white"
+            >
+              Refund Policy
+            </Link>
+
 
           </div>
 
+        </div>
 
 
-          <div>
 
-            <h3
-              className="
-                text-sm
-                uppercase
-                tracking-widest
-                text-white/40
-              "
+
+
+        {/* LEGAL */}
+
+        <div>
+
+          <h3
+            className="
+              font-bold
+            "
+          >
+            Legal
+          </h3>
+
+
+          <div
+            className="
+              mt-4
+              flex
+              flex-col
+              gap-3
+              text-sm
+              text-white/50
+            "
+          >
+
+            <Link
+              href="/privacy"
+              className="hover:text-white"
             >
-              Social
-            </h3>
+              Privacy Policy
+            </Link>
 
 
-            <div
-              className="
-                mt-4
-                flex
-                flex-col
-                gap-3
-              "
+            <Link
+              href="/terms"
+              className="hover:text-white"
             >
-
-              <a
-                href="#"
-                target="_blank"
-              >
-                TikTok
-              </a>
+              Terms & Conditions
+            </Link>
 
 
-              <a
-                href="#"
-                target="_blank"
-              >
-                Instagram
-              </a>
+            <a
+              href="mailto:noexcusivclub@gmail.com"
+              className="hover:text-white"
+            >
+              Contact
+            </a>
 
-            </div>
 
           </div>
-
 
         </div>
 
 
       </div>
+
 
 
 
@@ -159,13 +185,13 @@ export function Footer() {
           border-t
           border-white/10
           pt-6
+          text-center
           text-sm
           text-white/40
         "
       >
-
-        © 2026 NOEXCUSIV. All rights reserved.
-
+        © {new Date().getFullYear()} NOEXCUSIV.
+        All rights reserved.
       </div>
 
 

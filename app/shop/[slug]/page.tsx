@@ -79,6 +79,7 @@ export default async function ProductPage({ params }: Props) {
           "
         >
 
+
           <p
             className="
               text-sm
@@ -104,6 +105,7 @@ export default async function ProductPage({ params }: Props) {
 
 
 
+
           <p
             className="
               mt-6
@@ -116,6 +118,7 @@ export default async function ProductPage({ params }: Props) {
 
 
 
+
           <div
             className="
               mt-8
@@ -125,6 +128,19 @@ export default async function ProductPage({ params }: Props) {
           >
             €{product.price}
           </div>
+
+
+
+          <p
+            className="
+              mt-3
+              text-sm
+              text-white/50
+            "
+          >
+            Made on demand • Ships worldwide
+          </p>
+
 
 
 
@@ -149,9 +165,12 @@ export default async function ProductPage({ params }: Props) {
 
 
 
+
           {/* DROP BANNER */}
 
           <DropBanner />
+
+
 
 
 
@@ -169,9 +188,11 @@ export default async function ProductPage({ params }: Props) {
             "
           >
 
+
             <p>
-              ✓ Premium quality cap
+              ✓ Premium quality product
             </p>
+
 
 
             <p>
@@ -179,9 +200,30 @@ export default async function ProductPage({ params }: Props) {
             </p>
 
 
+
             <p>
-              ✓ Worldwide shipping
+              ✓ Worldwide shipping available
             </p>
+
+
+
+            <p>
+              ✓ Processing time: 2-5 business days
+            </p>
+
+
+
+            <p>
+              ✓ Estimated delivery: 5-15 business days
+            </p>
+
+
+
+            <p>
+              ✓ Tracking number provided after shipment
+            </p>
+
+
 
           </div>
 
@@ -193,9 +235,12 @@ export default async function ProductPage({ params }: Props) {
 
 
 
+
+
       {/* PRODUCT DETAILS */}
 
       <ProductDetails />
+
 
 
     </main>

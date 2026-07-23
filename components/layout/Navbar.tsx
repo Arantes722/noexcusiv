@@ -25,6 +25,7 @@ export function Navbar() {
           py-5
         "
       >
+
         <Link
           href="/"
           className="
@@ -33,8 +34,10 @@ export function Navbar() {
             tracking-[0.3em]
           "
         >
-          NOEXCUSIV
+          NOEXCUSIV.
         </Link>
+
+
 
         <div
           className="
@@ -46,14 +49,42 @@ export function Navbar() {
             tracking-widest
           "
         >
-          <Link href="/" className="hover:opacity-70 transition">
+
+          <Link
+            href="/"
+            className="
+              transition
+              hover:opacity-70
+            "
+          >
             Home
           </Link>
 
-          <Link href="/shop" className="hover:opacity-70 transition">
+
+          <Link
+            href="/shop"
+            className="
+              transition
+              hover:opacity-70
+            "
+          >
             Shop
           </Link>
+
+
+          <Link
+            href="/about"
+            className="
+              transition
+              hover:opacity-70
+            "
+          >
+            About
+          </Link>
+
+
         </div>
+
       </nav>
     </header>
   );
