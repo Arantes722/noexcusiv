@@ -10,21 +10,21 @@ const products = [
   {
     name: "NO EXCUSES Hat",
     price: "34.99€",
-    image: "/images/hat.png",
+    image: "/images/hat.jpg",
     slug: "first-drop-cap",
   },
 
   {
     name: "NO EXCUSES Tee",
     price: "39.99€",
-    image: "/images/shirt.png",
+    image: "/images/shirt.jpg",
     slug: "first-drop-tee",
   },
 
   {
     name: "NO EXCUSES Poster",
     price: "24.99€",
-    image: "/images/poster.png",
+    image: "/images/poster.jpg",
     slug: "first-drop-poster",
   },
 ];

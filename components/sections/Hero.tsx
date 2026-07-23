@@ -57,7 +57,7 @@ export function Hero() {
             className="flex justify-center"
           >
             <Image
-              src="/images/4.png"
+              src="/images/mockup.jpg"
               alt="NO EXCUSES Hat"
               width={700}
               height={700}

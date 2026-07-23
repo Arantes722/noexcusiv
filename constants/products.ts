@@ -15,19 +15,19 @@ export const products: Product[] = [
     description:
       "The first NOEXCUSIV piece. A premium dad hat created for those who choose discipline over excuses.",
 
-    image: "/products/hat/mockup.png",
+    image: "/products/hat/mockup.jpg",
 
     printfulUrl:
       "https://www.printful.com/product-template/105328680/177e6a39c0ee55597ce474e0f536e30b",
 
     gallery: [
-      "/products/hat/mockup.png",
-      "/products/hat/front.png",
-      "/products/hat/diagonal.png",
-      "/products/hat/right.png",
-      "/products/hat/left.png",
-      "/products/hat/back.png",
-      "/products/hat/diagonal2.png",
+      "/products/hat/mockup.jpg",
+      "/products/hat/front.jpg",
+      "/products/hat/diagonal.jpg",
+      "/products/hat/right.jpg",
+      "/products/hat/left.jpg",
+      "/products/hat/back.jpg",
+      "/products/hat/diagonal2.jpg",
     ],
   },
 ];
