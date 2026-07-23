@@ -9,7 +9,6 @@ export default function RefundPage() {
         pt-32
       "
     >
-
       <h1
         className="
           text-5xl
@@ -19,93 +18,101 @@ export default function RefundPage() {
         Refund Policy
       </h1>
 
-
-
       <div
         className="
           mt-10
-          space-y-6
-          text-lg
-          text-white/60
+          space-y-8
+          text-white/70
         "
       >
+        <section>
+          <h2
+            className="
+              text-2xl
+              font-bold
+              text-white
+            "
+          >
+            Returns
+          </h2>
 
-        <p>
-          At NOEXCUSIV, we want every customer to be
-          satisfied with their purchase.
-        </p>
+          <p className="mt-3">
+            Every NOEXCUSIV product is made to order. Because of this, we do not
+            accept returns or exchanges for incorrect size selection, change of
+            mind or buyer's remorse.
+          </p>
+        </section>
 
+        <section>
+          <h2
+            className="
+              text-2xl
+              font-bold
+              text-white
+            "
+          >
+            Damaged or Incorrect Items
+          </h2>
 
+          <p className="mt-3">
+            If your order arrives damaged, defective or you receive the wrong
+            product, please contact us within
+            <strong className="text-white"> 14 days</strong> of receiving your
+            order.
+          </p>
 
-        <p>
-          If you are not completely satisfied with your
-          order, you may request a return within 14 days
-          after receiving your product.
-        </p>
+          <p className="mt-4">
+            Include your order number together with clear photos showing the
+            issue so we can investigate and resolve it as quickly as possible.
+          </p>
+        </section>
 
+        <section>
+          <h2
+            className="
+              text-2xl
+              font-bold
+              text-white
+            "
+          >
+            Refunds
+          </h2>
 
+          <p className="mt-3">
+            If your claim is approved, we'll issue either a replacement product
+            or a full refund to your original payment method.
+          </p>
+        </section>
 
-        <p>
-          To be eligible for a return, items must be:
-        </p>
+        <section>
+          <h2
+            className="
+              text-2xl
+              font-bold
+              text-white
+            "
+          >
+            Contact
+          </h2>
 
+          <p className="mt-3">
+            For any questions regarding your order, contact us at:
+          </p>
 
-
-        <ul
-          className="
-            list-disc
-            space-y-2
-            pl-6
-          "
-        >
-
-          <li>
-            Unused and in original condition
-          </li>
-
-          <li>
-            With original packaging
-          </li>
-
-          <li>
-            Without signs of wear or damage
-          </li>
-
-        </ul>
-
-
-
-        <p>
-          Customers are responsible for return shipping
-          costs unless the product arrives damaged or
-          incorrect.
-        </p>
-
-
-
-        <p>
-          Once we receive and inspect your return, we
-          will process your refund.
-        </p>
-
-
-
-        <p>
-          For any questions, contact us at:
-          {" "}
           <a
             href="mailto:noexcusivclub@gmail.com"
-            className="text-white underline"
+            className="
+              mt-3
+              inline-block
+              font-medium
+              text-white
+              underline
+            "
           >
             noexcusivclub@gmail.com
           </a>
-        </p>
-
-
-
+        </section>
       </div>
-
-
     </main>
   );
 }

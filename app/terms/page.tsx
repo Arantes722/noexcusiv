@@ -9,7 +9,6 @@ export default function TermsPage() {
         pt-32
       "
     >
-
       <h1
         className="
           text-5xl
@@ -19,7 +18,6 @@ export default function TermsPage() {
         Terms & Conditions
       </h1>
 
-
       <div
         className="
           mt-10
@@ -27,9 +25,7 @@ export default function TermsPage() {
           text-white/70
         "
       >
-
         <section>
-
           <h2
             className="
               text-2xl
@@ -37,21 +33,16 @@ export default function TermsPage() {
               text-white
             "
           >
-            General Information
+            General
           </h2>
 
           <p className="mt-3">
-            Welcome to NOEXCUSIV. By accessing and using our
-            website, you agree to these Terms & Conditions.
+            By accessing this website and placing an order, you agree to these
+            Terms & Conditions.
           </p>
-
         </section>
 
-
-
-
         <section>
-
           <h2
             className="
               text-2xl
@@ -63,19 +54,13 @@ export default function TermsPage() {
           </h2>
 
           <p className="mt-3">
-            We make every effort to display accurate product
-            descriptions, images, and prices. However, slight
-            variations may occur due to screen settings or
-            production processes.
+            Every NOEXCUSIV product is made to order. Product images are for
+            illustration purposes and slight differences in colour or placement
+            may occur due to the production process.
           </p>
-
         </section>
 
-
-
-
         <section>
-
           <h2
             className="
               text-2xl
@@ -83,22 +68,16 @@ export default function TermsPage() {
               text-white
             "
           >
-            Orders & Payments
+            Pricing & Payments
           </h2>
 
           <p className="mt-3">
-            Orders are processed after successful payment
-            confirmation. Payments are securely handled by
-            Stripe.
+            All prices are displayed in Euros (€). Payments are processed
+            securely through Stripe.
           </p>
-
         </section>
 
-
-
-
         <section>
-
           <h2
             className="
               text-2xl
@@ -110,17 +89,28 @@ export default function TermsPage() {
           </h2>
 
           <p className="mt-3">
-            Delivery times are estimates and may vary depending
-            on location, production time, and shipping carriers.
+            Orders are produced after purchase and shipped according to our
+            Shipping Policy. Delivery estimates are not guaranteed.
           </p>
-
         </section>
 
+        <section>
+          <h2
+            className="
+              text-2xl
+              font-bold
+              text-white
+            "
+          >
+            Returns & Refunds
+          </h2>
 
-
+          <p className="mt-3">
+            Returns and refunds are handled according to our Refund Policy.
+          </p>
+        </section>
 
         <section>
-
           <h2
             className="
               text-2xl
@@ -132,18 +122,13 @@ export default function TermsPage() {
           </h2>
 
           <p className="mt-3">
-            All NOEXCUSIV designs, branding, images, and content
-            are property of NOEXCUSIV and may not be reproduced
-            without permission.
+            All NOEXCUSIV branding, designs, images and website content remain
+            the intellectual property of NOEXCUSIV and may not be copied,
+            reproduced or distributed without prior written permission.
           </p>
-
         </section>
 
-
-
-
         <section>
-
           <h2
             className="
               text-2xl
@@ -155,19 +140,22 @@ export default function TermsPage() {
           </h2>
 
           <p className="mt-3">
-            For any questions regarding these Terms, contact:
+            Questions regarding these Terms & Conditions can be sent to:
           </p>
 
-          <p className="mt-2 text-white">
+          <a
+            href="mailto:noexcusivclub@gmail.com"
+            className="
+              mt-3
+              inline-block
+              text-white
+              underline
+            "
+          >
             noexcusivclub@gmail.com
-          </p>
-
+          </a>
         </section>
-
-
       </div>
-
-
     </main>
   );
 }

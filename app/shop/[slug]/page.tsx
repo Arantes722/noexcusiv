@@ -103,10 +103,13 @@ export default async function ProductPage({ params }: Props) {
             className="
               mt-3
               text-sm
-              text-white/50
+              uppercase
+              tracking-[0.25em]
+              font-semibold
+              text-white
             "
           >
-            Made on demand • Ships worldwide
+            FREE SHIPPING
           </p>
 
           <Link
@@ -147,17 +150,17 @@ export default async function ProductPage({ params }: Props) {
           >
             <div className="flex items-center gap-3">
               <CheckCircle2 size={20} />
-              <span>In Stock</span>
+              <span>Made to order</span>
             </div>
 
             <div className="flex items-center gap-3">
               <Truck size={20} />
-              <span>Processing: 2–5 business days</span>
+              <span>Free Shipping</span>
             </div>
 
             <div className="flex items-center gap-3">
               <Truck size={20} />
-              <span>Estimated delivery: 5–15 business days</span>
+              <span>Processing in 2–5 business days</span>
             </div>
 
             <div className="flex items-center gap-3">

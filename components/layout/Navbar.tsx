@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-
 export function Navbar() {
   return (
     <header
@@ -9,86 +8,103 @@ export function Navbar() {
         top-0
         z-50
         w-full
-        border-b
-        border-white/10
-        bg-black/70
-        backdrop-blur
       "
     >
+      {/* TOP BAR */}
+
+      <div
+        className="
+          border-b
+          border-white/10
+          bg-zinc-950
+          py-2
+          text-center
+          text-[10px]
+          font-semibold
+          uppercase
+          tracking-[0.35em]
+          text-white/80
+          sm:text-xs
+        "
+      >
+        FREE SHIPPING
+      </div>
+
+      {/* NAVBAR */}
 
       <nav
         className="
-          mx-auto
-          flex
-          max-w-7xl
-          items-center
-          justify-between
-          gap-4
-          px-6
-          py-5
+          border-b
+          border-white/10
+          bg-black/70
+          backdrop-blur
         "
       >
-
-
-        {/* LOGO */}
-
-        <Link
-          href="/"
-          className="
-            shrink-0
-            text-lg
-            font-bold
-            tracking-[0.25em]
-            sm:text-xl
-          "
-        >
-          NOEXCUSIV.
-        </Link>
-
-
-
-        {/* LINKS */}
-
         <div
           className="
+            mx-auto
             flex
+            max-w-7xl
             items-center
+            justify-between
             gap-4
-            text-xs
-            uppercase
-            tracking-widest
-            sm:gap-8
-            sm:text-sm
+            px-6
+            py-5
           "
         >
+          {/* LOGO */}
 
           <Link
             href="/"
             className="
+              shrink-0
+              text-lg
+              font-bold
+              tracking-[0.25em]
               transition
-              hover:opacity-70
+              hover:opacity-80
+              sm:text-xl
             "
           >
-            Home
+            NOEXCUSIV
           </Link>
 
+          {/* LINKS */}
 
-          <Link
-            href="/shop"
+          <div
             className="
-              transition
-              hover:opacity-70
+              flex
+              items-center
+              gap-5
+              text-xs
+              uppercase
+              tracking-[0.2em]
+              sm:gap-8
+              sm:text-sm
             "
           >
-            Shop
-          </Link>
+            <Link
+              href="/"
+              className="
+                transition
+                hover:text-white/70
+              "
+            >
+              Home
+            </Link>
 
-
+            <Link
+              href="/shop"
+              className="
+                transition
+                hover:text-white/70
+              "
+            >
+              Shop
+            </Link>
+          </div>
         </div>
-
-
       </nav>
-
     </header>
   );
 }

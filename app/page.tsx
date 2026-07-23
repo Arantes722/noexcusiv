@@ -4,17 +4,11 @@ import Image from "next/image";
 import { products } from "@/data/products";
 import { BrandSection } from "@/components/home/BrandSection";
 
-
 export default function Home() {
-
   const product = products[0];
 
-
   return (
-
     <main>
-
-
       {/* HERO */}
 
       <section
@@ -28,13 +22,11 @@ export default function Home() {
           text-center
         "
       >
-
         <div
           className="
             max-w-5xl
           "
         >
-
           <p
             className="
               text-sm
@@ -46,8 +38,6 @@ export default function Home() {
             NOEXCUSIV
           </p>
 
-
-
           <h1
             className="
               mt-6
@@ -57,14 +47,10 @@ export default function Home() {
               md:text-9xl
             "
           >
-
             NO
             <br />
             EXCUSES.
-
           </h1>
-
-
 
           <p
             className="
@@ -75,12 +61,9 @@ export default function Home() {
               text-white/60
             "
           >
-            Built for people who refuse excuses,
-            chase progress and demand more from themselves.
+            Premium mindset apparel built for people who refuse excuses, chase
+            progress and demand more from themselves.
           </p>
-
-
-
 
           <Link
             href="/shop/first-drop-cap"
@@ -99,18 +82,10 @@ export default function Home() {
           >
             Shop First Drop
           </Link>
-
-
         </div>
-
       </section>
 
-
-
-
-
       {/* FEATURED PRODUCT */}
-
 
       <section
         className="
@@ -120,8 +95,6 @@ export default function Home() {
           py-24
         "
       >
-
-
         <div
           className="
             grid
@@ -130,9 +103,6 @@ export default function Home() {
             md:grid-cols-2
           "
         >
-
-
-
           <div
             className="
               rounded-3xl
@@ -140,35 +110,20 @@ export default function Home() {
               p-8
             "
           >
-
             <Image
-
               src={product.image}
-
               alt={product.name}
-
               width={700}
-
               height={700}
-
               priority
-
               className="
                 w-full
                 rounded-2xl
               "
-
             />
-
           </div>
 
-
-
-
-
           <div>
-
-
             <p
               className="
                 text-sm
@@ -180,10 +135,6 @@ export default function Home() {
               {product.collection}
             </p>
 
-
-
-
-
             <h2
               className="
                 mt-4
@@ -194,10 +145,6 @@ export default function Home() {
               {product.name}
             </h2>
 
-
-
-
-
             <p
               className="
                 mt-6
@@ -207,10 +154,6 @@ export default function Home() {
             >
               {product.description}
             </p>
-
-
-
-
 
             <p
               className="
@@ -224,10 +167,6 @@ export default function Home() {
               First Drop • Limited Availability
             </p>
 
-
-
-
-
             <div
               className="
                 mt-8
@@ -238,9 +177,18 @@ export default function Home() {
               €{product.price}
             </div>
 
-
-
-
+            <p
+              className="
+                mt-3
+                text-sm
+                font-semibold
+                uppercase
+                tracking-[0.25em]
+                text-white
+              "
+            >
+              FREE SHIPPING
+            </p>
 
             <Link
               href={`/shop/${product.slug}`}
@@ -259,25 +207,11 @@ export default function Home() {
             >
               Buy Now
             </Link>
-
-
           </div>
-
-
         </div>
-
-
       </section>
 
-
-
-
-
       <BrandSection />
-
-
     </main>
-
   );
-
 }

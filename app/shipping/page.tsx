@@ -9,7 +9,6 @@ export default function ShippingPage() {
         pt-32
       "
     >
-
       <h1
         className="
           text-5xl
@@ -19,58 +18,103 @@ export default function ShippingPage() {
         Shipping Policy
       </h1>
 
-
       <div
         className="
           mt-10
-          space-y-6
-          text-lg
-          text-white/60
+          space-y-8
+          text-white/70
         "
       >
+        <section>
+          <h2
+            className="
+              text-2xl
+              font-bold
+              text-white
+            "
+          >
+            Shipping
+          </h2>
 
-        <p>
-          We currently ship orders worldwide.
-        </p>
+          <p className="mt-3">
+            We currently ship to countries within Europe only.
+          </p>
+        </section>
 
+        <section>
+          <h2
+            className="
+              text-2xl
+              font-bold
+              text-white
+            "
+          >
+            Shipping Costs
+          </h2>
 
-        <p>
-          Orders are processed within 2-5 business days
-          after payment confirmation.
-        </p>
+          <p className="mt-3">
+            We offer <strong className="text-white">Free Shipping</strong> on
+            all orders.
+          </p>
+        </section>
 
+        <section>
+          <h2
+            className="
+              text-2xl
+              font-bold
+              text-white
+            "
+          >
+            Processing Time
+          </h2>
 
-        <p>
-          Estimated delivery time:
-        </p>
+          <p className="mt-3">
+            Every product is made to order. Orders are usually processed within
+            <strong className="text-white"> 2–5 business days</strong>.
+          </p>
+        </section>
 
+        <section>
+          <h2
+            className="
+              text-2xl
+              font-bold
+              text-white
+            "
+          >
+            Estimated Delivery
+          </h2>
 
-        <ul className="space-y-2">
+          <p className="mt-3">
+            Delivery usually takes
+            <strong className="text-white"> 5–15 business days</strong>,
+            depending on your country and the shipping carrier.
+          </p>
 
-          <li>
-            🇵🇹 Portugal: 3-7 business days
-          </li>
+          <p className="mt-4">
+            Delivery times are estimates and may vary during busy periods,
+            customs procedures or other circumstances outside our control.
+          </p>
+        </section>
 
-          <li>
-            🇪🇺 Europe: 5-12 business days
-          </li>
+        <section>
+          <h2
+            className="
+              text-2xl
+              font-bold
+              text-white
+            "
+          >
+            Order Tracking
+          </h2>
 
-          <li>
-            🌎 International: 10-20 business days
-          </li>
-
-        </ul>
-
-
-        <p>
-          Delivery times may vary depending on the
-          destination and shipping provider.
-        </p>
-
-
+          <p className="mt-3">
+            Once your order has been shipped, you'll receive a confirmation
+            email with a tracking number.
+          </p>
+        </section>
       </div>
-
-
     </main>
   );
 }

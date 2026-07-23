@@ -9,15 +9,14 @@ const items = [
   },
   {
     icon: Truck,
-    title: "Worldwide Shipping",
-    description:
-      "Tracked shipping available across Europe and selected international countries.",
+    title: "Free Shipping",
+    description: "Free shipping on all orders within Europe.",
   },
   {
     icon: RotateCcw,
     title: "14-Day Returns",
     description:
-      "Return your order within 14 days if you're not completely satisfied.",
+      "Contact us within 14 days if your order arrives damaged or incorrect.",
   },
   {
     icon: ShieldCheck,
