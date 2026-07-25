@@ -1,11 +1,9 @@
-import Link from "next/link";
-import { ShieldCheck, Truck, RotateCcw, CheckCircle2 } from "lucide-react";
-
 import { products } from "@/constants/products";
 
 import { ProductGallery } from "@/components/shop/ProductGallery";
+import { ProductPurchase } from "@/components/shop/ProductPurchase";
+import { ProductInformation } from "@/components/shop/ProductInformation";
 import { ProductDetails } from "@/components/shop/ProductDetails";
-import { DropBanner } from "@/components/shop/DropBanner";
 
 type Props = {
   params: Promise<{
@@ -45,11 +43,11 @@ export default async function ProductPage({ params }: Props) {
           lg:grid-cols-2
         "
       >
-        {/* GALERIA */}
+        {/* GALLERY */}
 
         <ProductGallery images={product.gallery} name={product.name} />
 
-        {/* INFO */}
+        {/* PRODUCT INFO */}
 
         <div
           className="
@@ -96,87 +94,18 @@ export default async function ProductPage({ params }: Props) {
               font-bold
             "
           >
-            €{product.price}
+            €{product.price.toFixed(2)}
           </div>
 
-          <p
-            className="
-              mt-3
-              text-sm
-              uppercase
-              tracking-[0.25em]
-              font-semibold
-              text-white
-            "
-          >
-            FREE SHIPPING
-          </p>
-
-          <Link
-            href={`/checkout/${product.slug}`}
-            className="
-              mt-10
-              inline-flex
-              justify-center
-              rounded-full
-              bg-white
-              px-10
-              py-4
-              font-bold
-              text-black
-              transition
-              hover:scale-105
-            "
-          >
-            Buy Now
-          </Link>
-
-          {/* DROP BANNER */}
-
-          <DropBanner />
-
-          {/* TRUST BOX */}
-
-          <div
-            className="
-              mt-8
-              rounded-3xl
-              border
-              border-white/10
-              bg-white/5
-              p-6
-              space-y-5
-            "
-          >
-            <div className="flex items-center gap-3">
-              <CheckCircle2 size={20} />
-              <span>Made to order</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Truck size={20} />
-              <span>Free Shipping</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Truck size={20} />
-              <span>Processing in 2–5 business days</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <RotateCcw size={20} />
-              <span>14-Day Returns</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <ShieldCheck size={20} />
-              <span>Secure payments powered by Stripe</span>
-            </div>
-          </div>
+          <ProductPurchase slug={product.slug} price={product.price} />
         </div>
       </div>
 
-      {/* PRODUCT DETAILS */}
+      {/* PRODUCT INFORMATION */}
+
+      <ProductInformation />
+
+      {/* WHY NOEXCUSIV */}
 
       <ProductDetails />
     </main>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Check, Lock } from "lucide-react";
 
 import { products } from "@/constants/products";
 import { CheckoutButton } from "@/components/shop/CheckoutButton";
@@ -39,7 +40,7 @@ export default async function CheckoutPage({ params }: Props) {
     <main
       className="
         mx-auto
-        max-w-5xl
+        max-w-6xl
         px-6
         pb-24
         pt-32
@@ -66,12 +67,22 @@ export default async function CheckoutPage({ params }: Props) {
         Complete your order
       </h1>
 
+      <p
+        className="
+          mt-4
+          max-w-lg
+          text-white/60
+        "
+      >
+        You're one step away from joining NOEXCUSIV.
+      </p>
+
       <div
         className="
-          mt-12
+          mt-14
           grid
           gap-10
-          md:grid-cols-2
+          lg:grid-cols-[1.2fr_0.8fr]
         "
       >
         {/* PRODUCT */}
@@ -80,41 +91,22 @@ export default async function CheckoutPage({ params }: Props) {
           className="
             rounded-3xl
             bg-white/5
-            p-6
+            p-8
           "
         >
           <Image
             src={product.image}
             alt={product.name}
-            width={600}
-            height={600}
+            width={900}
+            height={900}
             priority
             className="
               rounded-2xl
             "
           />
-
-          <h2
-            className="
-              mt-6
-              text-2xl
-              font-bold
-            "
-          >
-            {product.name}
-          </h2>
-
-          <p
-            className="
-              mt-2
-              text-white/50
-            "
-          >
-            {product.collection}
-          </p>
         </div>
 
-        {/* ORDER SUMMARY */}
+        {/* SUMMARY */}
 
         <div
           className="
@@ -134,53 +126,165 @@ export default async function CheckoutPage({ params }: Props) {
             Order Summary
           </h2>
 
+          {/* PRODUCT */}
+
           <div
             className="
               mt-8
-              space-y-4
+              flex
+              gap-4
             "
           >
-            <div
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={90}
+              height={90}
               className="
-                flex
-                justify-between
-                text-white/70
+                rounded-xl
               "
-            >
-              <span>{product.name}</span>
+            />
 
-              <span>€{product.price}</span>
+            <div className="flex-1">
+              <h3 className="font-semibold">{product.name}</h3>
+
+              <p
+                className="
+                  mt-1
+                  text-sm
+                  text-white/50
+                "
+              >
+                Classic Dad Hat
+              </p>
+            </div>
+          </div>
+
+          {/* PRICE */}
+
+          <div
+            className="
+              mt-8
+              space-y-5
+              text-white/70
+            "
+          >
+            <div className="flex justify-between">
+              <span>Quantity</span>
+
+              <span>1</span>
+            </div>
+
+            <div className="flex justify-between">
+              <span>Unit Price</span>
+
+              <span>€{product.price.toFixed(2)}</span>
+            </div>
+
+            <div className="flex justify-between">
+              <span>Shipping</span>
+
+              <span className="font-semibold">FREE</span>
             </div>
 
             <div
               className="
                 border-t
                 border-white/10
-                pt-4
+                pt-5
                 flex
+                items-center
                 justify-between
-                text-xl
-                font-bold
               "
             >
-              <span>Total</span>
+              <span
+                className="
+                  text-xl
+                  font-bold
+                "
+              >
+                Total
+              </span>
 
-              <span>€{product.price}</span>
+              <span
+                className="
+                  text-3xl
+                  font-bold
+                "
+              >
+                €{product.price.toFixed(2)}
+              </span>
             </div>
           </div>
 
-          {/* STRIPE CHECKOUT */}
+          {/* TRUST */}
+
+          <div
+            className="
+              mt-8
+              rounded-2xl
+              border
+              border-white/10
+              bg-black/20
+              p-5
+            "
+          >
+            <div className="space-y-3 text-sm">
+              <div className="flex items-center gap-3">
+                <Check size={16} />
+                <span>Free Shipping</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Check size={16} />
+                <span>Europe only</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Check size={16} />
+                <span>Made to order</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Check size={16} />
+                <span>Estimated delivery: 5–15 business days</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Check size={16} />
+                <span>Tracking included</span>
+              </div>
+            </div>
+          </div>
 
           <CheckoutButton slug={product.slug} />
+
+          <div
+            className="
+              mt-5
+              flex
+              items-center
+              justify-center
+              gap-2
+              text-sm
+              text-white/45
+            "
+          >
+            <Lock size={15} />
+
+            <span>Secure payments powered by Stripe</span>
+          </div>
 
           <Link
             href={`/shop/${product.slug}`}
             className="
-              mt-6
+              mt-8
               block
               text-center
               text-sm
               text-white/50
+              transition
+              hover:text-white
             "
           >
             ← Back to product

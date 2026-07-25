@@ -21,7 +21,7 @@ export default function ShippingPage() {
       <div
         className="
           mt-10
-          space-y-8
+          space-y-10
           text-white/70
         "
       >
@@ -53,8 +53,7 @@ export default function ShippingPage() {
           </h2>
 
           <p className="mt-3">
-            We offer <strong className="text-white">Free Shipping</strong> on
-            all orders.
+            We offer <strong>Free Shipping</strong> on all orders.
           </p>
         </section>
 
@@ -66,12 +65,16 @@ export default function ShippingPage() {
               text-white
             "
           >
-            Processing Time
+            Production
           </h2>
 
           <p className="mt-3">
-            Every product is made to order. Orders are usually processed within
-            <strong className="text-white"> 2–5 business days</strong>.
+            Every product is made to order before being shipped.
+          </p>
+
+          <p className="mt-3">
+            This allows us to reduce waste while ensuring every item is produced
+            specifically for your order.
           </p>
         </section>
 
@@ -87,14 +90,15 @@ export default function ShippingPage() {
           </h2>
 
           <p className="mt-3">
-            Delivery usually takes
-            <strong className="text-white"> 5–15 business days</strong>,
-            depending on your country and the shipping carrier.
+            Orders are typically delivered within
+            <strong> 5–15 business days</strong>, depending on your destination
+            and the shipping carrier.
           </p>
 
-          <p className="mt-4">
+          <p className="mt-3">
             Delivery times are estimates and may vary during busy periods,
-            customs procedures or other circumstances outside our control.
+            public holidays, customs procedures or other circumstances outside
+            our control.
           </p>
         </section>
 
@@ -111,8 +115,28 @@ export default function ShippingPage() {
 
           <p className="mt-3">
             Once your order has been shipped, you'll receive a confirmation
-            email with a tracking number.
+            email containing your tracking number so you can monitor your
+            delivery.
           </p>
+        </section>
+
+        <section>
+          <h2
+            className="
+              text-2xl
+              font-bold
+              text-white
+            "
+          >
+            Questions
+          </h2>
+
+          <p className="mt-3">
+            If you have any questions regarding shipping, feel free to contact
+            us at:
+          </p>
+
+          <p className="mt-2 text-white">noexcusivclub@gmail.com</p>
         </section>
       </div>
     </main>
