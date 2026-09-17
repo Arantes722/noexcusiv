@@ -2,35 +2,32 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 px-6 py-14">
+    <footer className="border-t border-white/10 px-5 py-7 md:px-8 md:py-8">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 md:grid-cols-12">
+
+        <div className="grid gap-7 md:grid-cols-12 md:items-start md:gap-6">
+
           {/* BRAND */}
           <div className="md:col-span-5">
             <Link
               href="/"
-              className="text-xl font-bold tracking-[0.18em] transition hover:opacity-70"
+              className="text-base font-bold tracking-[0.18em] transition hover:opacity-70"
             >
               NOEXCUSIV
             </Link>
 
-            <p className="mt-5 max-w-sm text-sm leading-7 text-white/40">
-              A lifestyle brand creating distinctive pieces for the spaces
-              and lives we build.
-            </p>
-
-            <p className="mt-6 text-[10px] uppercase tracking-[0.35em] text-white/20">
-              #NOEXCUSIVCLUB
+            <p className="mt-2 max-w-xs text-[11px] leading-5 text-white/30">
+              Distinctive pieces for the spaces and lives we build.
             </p>
           </div>
 
-          {/* COLLECTION */}
+          {/* EXPLORE */}
           <div className="md:col-span-2 md:col-start-7">
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em]">
-              Collection
-            </h3>
+            <p className="text-[8px] uppercase tracking-[0.3em] text-white/25">
+              Explore
+            </p>
 
-            <div className="mt-5 flex flex-col gap-3 text-sm text-white/40">
+            <nav className="mt-2 flex flex-col gap-1.5 text-[11px] text-white/40">
               <Link
                 href="/shop"
                 className="transition hover:text-white"
@@ -51,16 +48,16 @@ export function Footer() {
               >
                 Shipping
               </Link>
-            </div>
+            </nav>
           </div>
 
           {/* CONNECT */}
           <div className="md:col-span-2">
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em]">
+            <p className="text-[8px] uppercase tracking-[0.3em] text-white/25">
               Connect
-            </h3>
+            </p>
 
-            <div className="mt-5 flex flex-col gap-3 text-sm text-white/40">
+            <nav className="mt-2 flex flex-col gap-1.5 text-[11px] text-white/40">
               <a
                 href="https://www.tiktok.com/@noexcusivclub"
                 target="_blank"
@@ -85,16 +82,16 @@ export function Footer() {
               >
                 Contact
               </a>
-            </div>
+            </nav>
           </div>
 
           {/* LEGAL */}
           <div className="md:col-span-2">
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em]">
+            <p className="text-[8px] uppercase tracking-[0.3em] text-white/25">
               Legal
-            </h3>
+            </p>
 
-            <div className="mt-5 flex flex-col gap-3 text-sm text-white/40">
+            <nav className="mt-2 flex flex-col gap-1.5 text-[11px] text-white/40">
               <Link
                 href="/privacy"
                 className="transition hover:text-white"
@@ -115,16 +112,17 @@ export function Footer() {
               >
                 Refunds
               </Link>
-            </div>
+            </nav>
           </div>
+
         </div>
 
-        {/* BOTTOM */}
-        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-[10px] uppercase tracking-[0.2em] text-white/25 sm:flex-row sm:items-center sm:justify-between">
+        {/* COPYRIGHT */}
+        <div className="mt-6 flex items-center justify-between text-[8px] uppercase tracking-[0.25em] text-white/15">
           <p>© {new Date().getFullYear()} NOEXCUSIV</p>
-
-          <p>NO EXCUSES. NO AVERAGE LIFE.</p>
+          <p>#NOEXCUSIVCLUB</p>
         </div>
+
       </div>
     </footer>
   );
