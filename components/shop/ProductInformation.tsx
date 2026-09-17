@@ -1,51 +1,38 @@
-import { Package, Truck, Shirt } from "lucide-react";
+import { Package, Sparkles, Truck } from "lucide-react";
 
 const items = [
   {
-    icon: Package,
-    title: "Product",
+    icon: Sparkles,
+    title: "The piece",
     points: [
-      "Classic Dad Hat by Yupoong",
-      "Premium embroidered design",
-      "Curved visor",
-      "Adjustable strap",
-      "One size fits most",
+      "Designed with intention",
+      "Created to have presence",
+      "Built to belong in your space",
+    ],
+  },
+  {
+    icon: Package,
+    title: "The experience",
+    points: [
+      "Premium presentation",
+      "Thoughtful details",
+      "Designed to feel like more than a product",
     ],
   },
   {
     icon: Truck,
     title: "Shipping",
     points: [
-      "Free Shipping",
-      "Europe only",
-      "Made to order",
-      "Estimated delivery: 5–15 business days",
-      "Tracking included",
-    ],
-  },
-  {
-    icon: Shirt,
-    title: "Care",
-    points: [
-      "Spot clean only",
-      "Air dry naturally",
-      "Do not machine wash",
-      "Avoid bleach",
-      "Handle embroidery with care",
+      "Shipping details available with each release",
+      "Carefully prepared for delivery",
+      "Tracking details provided when available",
     ],
   },
 ];
 
 export function ProductInformation() {
   return (
-    <section
-      className="
-        mt-20
-        grid
-        gap-6
-        lg:grid-cols-3
-      "
-    >
+    <section className="mt-20 grid gap-6 lg:grid-cols-3">
       {items.map((item) => {
         const Icon = item.icon;
 
@@ -75,26 +62,14 @@ export function ProductInformation() {
                 text-black
               "
             >
-              <Icon size={28} />
+              <Icon size={26} />
             </div>
 
-            <h3
-              className="
-                mt-6
-                text-2xl
-                font-bold
-              "
-            >
+            <h3 className="mt-6 text-2xl font-bold">
               {item.title}
             </h3>
 
-            <ul
-              className="
-                mt-5
-                space-y-3
-                text-white/60
-              "
-            >
+            <ul className="mt-5 space-y-3 text-sm text-white/60">
               {item.points.map((point) => (
                 <li key={point} className="leading-7">
                   • {point}

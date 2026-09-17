@@ -11,15 +11,15 @@ export function TheMindset() {
           </p>
 
           <h2 className="text-4xl font-black leading-tight md:text-6xl">
-            We don't sell clothes.
+            Average was
             <br />
-            We sell discipline.
+            never the goal.
           </h2>
 
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-zinc-400">
-            NOEXCUSIV was created for people who refuse average.
-            Every piece represents consistency, ambition and the commitment to
-            become better every single day.
+            NOEXCUSIV represents the pursuit of an exceptional life.
+            Ambition, discipline, freedom and self-belief — without excuses.
+            Built for those who refuse to settle for average.
           </p>
         </div>
       </Container>

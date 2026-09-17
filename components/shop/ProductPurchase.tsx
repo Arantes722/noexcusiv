@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Check, Minus, Plus, Lock } from "lucide-react";
+import { Minus, Plus, Lock } from "lucide-react";
 
 type Props = {
   slug: string;
@@ -26,110 +26,34 @@ export function ProductPurchase({ slug, price }: Props) {
 
   return (
     <>
-      {/* QUICK BENEFITS */}
-
-      <div
-        className="
-          mt-8
-          rounded-3xl
-          border
-          border-white/10
-          bg-white/5
-          p-5
-        "
-      >
-        <div
-          className="
-            space-y-3
-            text-sm
-            text-white/70
-          "
-        >
-          <div className="flex items-center gap-3">
-            <Check size={16} />
-            <span>Adjustable One Size Fit</span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Check size={16} />
-            <span>Free Shipping</span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Check size={16} />
-            <span>Estimated delivery: 5–15 business days</span>
-          </div>
-        </div>
-      </div>
-
       {/* QUANTITY */}
 
       <div className="mt-8">
-        <p
-          className="
-            mb-3
-            text-sm
-            uppercase
-            tracking-widest
-            text-white/50
-          "
-        >
+        <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-white/35">
           Quantity
         </p>
 
-        <div
-          className="
-            flex
-            w-fit
-            items-center
-            overflow-hidden
-            rounded-full
-            border
-            border-white/10
-            bg-white/5
-          "
-        >
+        <div className="flex w-fit items-center overflow-hidden rounded-full border border-white/10 bg-white/[0.04]">
           <button
+            type="button"
             onClick={decrease}
-            className="
-              flex
-              h-12
-              w-12
-              items-center
-              justify-center
-              transition
-              hover:bg-white/10
-            "
+            className="flex h-12 w-12 items-center justify-center text-white/60 transition hover:bg-white/10 hover:text-white"
+            aria-label="Decrease quantity"
           >
-            <Minus size={18} />
+            <Minus size={16} />
           </button>
 
-          <div
-            className="
-              flex
-              h-12
-              w-16
-              items-center
-              justify-center
-              font-semibold
-            "
-          >
+          <div className="flex h-12 w-14 items-center justify-center text-sm font-medium">
             {quantity}
           </div>
 
           <button
+            type="button"
             onClick={increase}
-            className="
-              flex
-              h-12
-              w-12
-              items-center
-              justify-center
-              transition
-              hover:bg-white/10
-            "
+            className="flex h-12 w-12 items-center justify-center text-white/60 transition hover:bg-white/10 hover:text-white"
+            aria-label="Increase quantity"
           >
-            <Plus size={18} />
+            <Plus size={16} />
           </button>
         </div>
       </div>
@@ -148,33 +72,26 @@ export function ProductPurchase({ slug, price }: Props) {
           bg-white
           px-10
           py-4
-          text-lg
+          text-sm
           font-bold
+          uppercase
+          tracking-[0.18em]
           text-black
           transition
           hover:scale-[1.02]
+          hover:bg-white/90
         "
       >
-        Buy Now • €{(price * quantity).toFixed(2)}
+        Buy now · €{(price * quantity).toFixed(2)}
       </Link>
 
       {/* SECURE CHECKOUT */}
 
-      <div
-        className="
-          mt-4
-          flex
-          items-center
-          justify-center
-          gap-2
-          text-sm
-          text-white/45
-        "
-      >
-        <Lock size={15} />
-
-        <span>Secure checkout powered by Stripe</span>
+      <div className="mt-4 flex items-center justify-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/25">
+        <Lock size={13} />
+        <span>Secure checkout · Stripe</span>
       </div>
     </>
   );
 }
+

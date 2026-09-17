@@ -10,28 +10,6 @@ export function Navbar() {
         w-full
       "
     >
-      {/* TOP BAR */}
-
-      <div
-        className="
-          border-b
-          border-white/10
-          bg-zinc-950
-          py-2
-          text-center
-          text-[10px]
-          font-semibold
-          uppercase
-          tracking-[0.35em]
-          text-white/80
-          sm:text-xs
-        "
-      >
-        FREE SHIPPING
-      </div>
-
-      {/* NAVBAR */}
-
       <nav
         className="
           border-b
@@ -100,7 +78,17 @@ export function Navbar() {
                 hover:text-white/70
               "
             >
-              Shop
+              Collection
+            </Link>
+
+            <Link
+              href="/about"
+              className="
+                transition
+                hover:text-white/70
+              "
+            >
+              About
             </Link>
           </div>
         </div>
@@ -108,3 +96,4 @@ export function Navbar() {
     </header>
   );
 }
+

@@ -1,69 +1,46 @@
-import { ShieldCheck, Truck, RotateCcw, Sparkles } from "lucide-react";
+import { ShieldCheck, Sparkles, Eye, Layers } from "lucide-react";
 
 const items = [
   {
     icon: Sparkles,
-    title: "Premium Quality",
+    title: "Designed with intention",
     description:
-      "Built with premium materials for everyday wear and long-lasting comfort.",
+      "Every NOEXCUSIV piece is created to have a clear identity and a reason to exist.",
   },
   {
-    icon: Truck,
-    title: "Free Shipping",
-    description: "Free shipping on all orders within Europe.",
+    icon: Eye,
+    title: "Made to be seen",
+    description:
+      "Distinctive pieces designed to add presence, character and identity to the spaces they belong to.",
   },
   {
-    icon: RotateCcw,
-    title: "14-Day Returns",
+    icon: Layers,
+    title: "More than an object",
     description:
-      "Contact us within 14 days if your order arrives damaged or incorrect.",
+      "NOEXCUSIV pieces are designed to become part of the environment around you — not simply fill a space.",
   },
   {
     icon: ShieldCheck,
-    title: "Secure Checkout",
+    title: "The NOEXCUSIV standard",
     description:
-      "Every payment is securely processed through Stripe using encrypted checkout.",
+      "We care about the details, the presentation and the experience behind every release.",
   },
 ];
 
 export function ProductDetails() {
   return (
-    <section
-      className="
-        mt-24
-      "
-    >
+    <section className="mt-24">
       <div className="text-center">
-        <p
-          className="
-            text-sm
-            uppercase
-            tracking-[0.4em]
-            text-white/40
-          "
-        >
-          WHY NOEXCUSIV
+        <p className="text-sm uppercase tracking-[0.4em] text-white/40">
+          THE NOEXCUSIV STANDARD
         </p>
 
-        <h2
-          className="
-            mt-4
-            text-4xl
-            font-bold
-          "
-        >
-          Built Without Excuses.
+        <h2 className="mt-4 text-4xl font-bold tracking-[-0.03em]">
+          Designed to mean something.
         </h2>
       </div>
 
-      <div
-        className="
-          mt-14
-          grid
-          gap-6
-          md:grid-cols-2
-        "
-      >
+      <div className="mt-14 grid gap-6 md:grid-cols-2">
         {items.map((item) => {
           const Icon = item.icon;
 
@@ -93,26 +70,14 @@ export function ProductDetails() {
                   text-black
                 "
               >
-                <Icon size={28} />
+                <Icon size={26} />
               </div>
 
-              <h3
-                className="
-                  mt-6
-                  text-2xl
-                  font-bold
-                "
-              >
+              <h3 className="mt-6 text-2xl font-bold">
                 {item.title}
               </h3>
 
-              <p
-                className="
-                  mt-3
-                  leading-7
-                  text-white/60
-                "
-              >
+              <p className="mt-3 leading-7 text-white/60">
                 {item.description}
               </p>
             </div>

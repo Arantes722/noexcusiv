@@ -4,13 +4,19 @@ import { useState } from "react";
 
 type Props = {
   slug: string;
+  quantity?: number;
 };
 
-export function CheckoutButton({ slug }: Props) {
+export function CheckoutButton({
+  slug,
+  quantity = 1,
+}: Props) {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleCheckout() {
     setLoading(true);
+    setError("");
 
     try {
       const response = await fetch("/api/checkout", {
@@ -20,40 +26,60 @@ export function CheckoutButton({ slug }: Props) {
         },
         body: JSON.stringify({
           slug,
+          quantity,
         }),
       });
 
       const data = await response.json();
 
-      if (data.url) {
-        window.location.href = data.url;
+      if (!response.ok || !data.url) {
+        throw new Error(
+          data.error || "Unable to start checkout."
+        );
       }
+
+      window.location.href = data.url;
     } catch (error) {
       console.error(error);
-    } finally {
+
+      setError(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
+
       setLoading(false);
     }
   }
 
   return (
-    <button
-      onClick={handleCheckout}
-      disabled={loading}
-      className="
-        mt-10
-        w-full
-        rounded-full
-        bg-white
-        px-10
-        py-4
-        font-bold
-        text-black
-        transition
-        hover:scale-105
-        disabled:opacity-50
-      "
-    >
-      {loading ? "Processing..." : "Continue to Payment"}
-    </button>
+    <div className="mt-10">
+      <button
+        type="button"
+        onClick={handleCheckout}
+        disabled={loading}
+        className="
+          w-full
+          rounded-full
+          bg-white
+          px-10
+          py-4
+          font-bold
+          text-black
+          transition
+          hover:scale-[1.02]
+          disabled:cursor-not-allowed
+          disabled:opacity-50
+        "
+      >
+        {loading ? "Processing..." : "Continue to Payment"}
+      </button>
+
+      {error && (
+        <p className="mt-4 text-center text-sm text-red-400">
+          {error}
+        </p>
+      )}
+    </div>
   );
 }
