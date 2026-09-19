@@ -11,6 +11,7 @@ type Props = {
   }>;
   searchParams: Promise<{
     quantity?: string;
+    key?: string;
   }>;
 };
 
@@ -19,7 +20,7 @@ export default async function CheckoutPage({
   searchParams,
 }: Props) {
   const { slug } = await params;
-  const { quantity: quantityParam } = await searchParams;
+  const { quantity: quantityParam, key: selectedKey } = await searchParams;
 
   const parsedQuantity = Number(quantityParam);
 
@@ -146,6 +147,7 @@ export default async function CheckoutPage({
           <CheckoutButton
             slug={product.slug}
             quantity={quantity}
+            selectedKey={selectedKey}
           />
 
           <div className="mt-5 flex items-center justify-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/25">
@@ -164,4 +166,3 @@ export default async function CheckoutPage({
     </main>
   );
 }
-

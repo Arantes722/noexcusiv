@@ -56,6 +56,14 @@ export function Navbar() {
             >
               About
             </Link>
+
+            <Link
+              href="/account"
+              onClick={(event) => handleNavClick(event, "/account")}
+              className="whitespace-nowrap transition hover:text-white/70"
+            >
+              Account
+            </Link>
           </div>
         </div>
       </nav>

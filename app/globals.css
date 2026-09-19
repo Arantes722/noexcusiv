@@ -99,6 +99,16 @@
     @apply border-border;
   }
 
+  @layer components {
+    .field-label {
+      @apply mb-2 block text-[10px] uppercase tracking-[0.25em] text-white/35;
+    }
+
+    .field-input {
+      @apply w-full border border-white/[0.12] bg-white/[0.03] px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/20 focus:border-white/40;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
   }

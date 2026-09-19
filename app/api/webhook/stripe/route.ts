@@ -1,12 +1,7 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
-import { supabase } from "@/lib/supabase";
-
-
-const stripe = new Stripe(
-  process.env.STRIPE_SECRET_KEY!
-);
+import { getSupabase } from "@/lib/supabase";
 
 
 const endpointSecret =
@@ -15,6 +10,15 @@ const endpointSecret =
 
 
 export async function POST(request: Request) {
+  const secretKey = process.env.STRIPE_SECRET_KEY;
+  if (!secretKey || !endpointSecret) {
+    return NextResponse.json(
+      { error: "Webhook is not configured." },
+      { status: 503 }
+    );
+  }
+
+  const stripe = new Stripe(secretKey);
 
   const body = await request.text();
 
@@ -73,7 +77,7 @@ export async function POST(request: Request) {
 
 
 
-    await supabase
+    await getSupabase()
       .from("orders")
       .insert({
 

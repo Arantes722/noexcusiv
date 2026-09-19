@@ -1,3 +1,1 @@
-import { Product } from "@/types/product";
-
-export const products: Product[] = [];
+export { products } from "@/data/products";

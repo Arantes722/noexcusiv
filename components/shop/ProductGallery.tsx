@@ -45,7 +45,7 @@ export function ProductGallery({
             55vw
           "
           className="
-            object-cover
+            object-contain
             transition-transform
             duration-700
             ease-out
