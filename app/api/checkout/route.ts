@@ -1,22 +1,40 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
-import { products } from "@/constants/products";
-
-
-const stripe = new Stripe(
-  process.env.STRIPE_SECRET_KEY!
-);
-
+import { products } from "@/data/products";
+import { getAuthenticatedUser } from "@/lib/account";
 
 
 export async function POST(request: Request) {
 
   try {
+    const secretKey = process.env.STRIPE_SECRET_KEY;
+    if (!secretKey) {
+      return NextResponse.json(
+        { error: "Checkout is not configured." },
+        { status: 503 }
+      );
+    }
+
+    const stripe = new Stripe(secretKey);
+    const user = await getAuthenticatedUser();
+
+    if (!user) {
+      return NextResponse.json(
+        { error: "Please log in before checkout." },
+        { status: 401 }
+      );
+    }
 
     const body = await request.json();
 
-    const { slug } = body;
+    const { slug, quantity: requestedQuantity, key: selectedKey } = body;
+    const quantity =
+      Number.isInteger(requestedQuantity) &&
+      requestedQuantity >= 1 &&
+      requestedQuantity <= 10
+        ? requestedQuantity
+        : 1;
 
 
 
@@ -36,7 +54,18 @@ export async function POST(request: Request) {
           status: 404,
         }
       );
+    }
 
+    const keyOption =
+      typeof selectedKey === "string"
+        ? product.keyOptions.find((option) => option.id === selectedKey)
+        : undefined;
+
+    if (selectedKey && (!keyOption || keyOption.status !== "available")) {
+      return NextResponse.json(
+        { error: "Selected key is not available." },
+        { status: 400 }
+      );
     }
 
 
@@ -55,7 +84,11 @@ export async function POST(request: Request) {
       metadata: {
         product_id: product.id,
         product_name: product.name,
+        selected_key: keyOption?.id ?? "",
+        quantity: String(quantity),
+        user_id: user.id,
       },
+      client_reference_id: user.id,
 
 
 
@@ -86,7 +119,7 @@ export async function POST(request: Request) {
           },
 
 
-          quantity: 1,
+          quantity,
 
         },
 

@@ -5,8 +5,10 @@ import Link from "next/link";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { products } from "@/data/products";
 
 export default function Home() {
+  const featuredProduct = products[0];
   const heroRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress: heroProgress } = useScroll({
@@ -35,7 +37,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="text-[10px] uppercase tracking-[0.5em] text-white/30"
             >
-              NOEXCUSIV / 001
+              {featuredProduct.collection}
             </motion.p>
 
             <div className="mt-8 grid gap-10 md:grid-cols-12 md:items-end">
@@ -128,7 +130,7 @@ export default function Home() {
             </p>
 
             <span className="text-[10px] uppercase tracking-[0.3em] text-white/20">
-              NOEXCUSIV / 001
+              {featuredProduct.collection}
             </span>
           </div>
 
@@ -146,11 +148,11 @@ export default function Home() {
               </p>
 
               <h2 className="mt-6 max-w-lg text-5xl font-black leading-[0.9] tracking-[-0.06em] md:text-7xl">
-                KEEP
-                <br />
-                GOING
-                <br />
-                FOR IT.
+                {featuredProduct.name.split(" ").map((word, index) => (
+                  <span key={`${word}-${index}`} className="block">
+                    {word}
+                  </span>
+                ))}
               </h2>
 
               <p className="mt-8 max-w-md text-[15px] leading-7 text-white/40">
@@ -161,16 +163,16 @@ export default function Home() {
 
               <p className="mt-6 max-w-md text-[15px] leading-7 text-white/30">
                 Some dreams take years to become real.
-                That doesn't make them any less worth chasing.
+                That doesn&apos;t make them any less worth chasing.
               </p>
 
               <div className="mt-10 flex items-center gap-8">
                 <span className="text-sm font-medium tracking-wide text-white">
-                  €49.90
+                  €{featuredProduct.price.toFixed(2)}
                 </span>
 
                 <Link
-                  href="/shop/pursuit"
+                  href={`/shop/${featuredProduct.slug}`}
                   className="inline-flex items-center gap-3 rounded-full bg-white px-7 py-4 text-[10px] font-bold uppercase tracking-[0.2em] text-black transition duration-300 hover:scale-105"
                 >
                   Explore piece
@@ -188,13 +190,13 @@ export default function Home() {
               className="flex justify-end md:col-span-7 md:col-start-6"
             >
               <Link
-                href="/shop/pursuit"
+                href={`/shop/${featuredProduct.slug}`}
                 className="group relative block w-full max-w-[520px]"
               >
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] border border-white/10 bg-zinc-950">
                   <Image
-                    src="/products/pursuit.jpg"
-                    alt="KEEP GOING FOR IT."
+                    src={featuredProduct.image}
+                    alt={featuredProduct.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 520px"
                     quality={100}

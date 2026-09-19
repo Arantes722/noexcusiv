@@ -43,22 +43,18 @@ export const products: Product[] = [
       },
     ],
 
-    // Replace these with the confirmed production specifications
-    // before the product goes live.
     details: {
-      material: "Premium framed wall piece",
-      dimensions: "30 × 40 cm",
-      finish: "Matte black finish",
-      presentation: "Ready to display",
-      weight: "Approx. 1.5 kg",
+      material: "To be confirmed",
+      dimensions: "To be confirmed",
+      finish: "To be confirmed",
+      presentation: "To be confirmed",
+      weight: "To be confirmed",
     },
 
     included: [
       "KEEP GOING FOR IT. statement piece",
       "Selected automotive key",
-      "Premium presentation",
-      "Ready-to-display frame",
-      "Protective packaging",
+      "Presentation details to be confirmed",
     ],
   },
 ];

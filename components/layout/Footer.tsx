@@ -41,13 +41,6 @@ export function Footer() {
               >
                 About
               </Link>
-
-              <Link
-                href="/shipping"
-                className="transition hover:text-white"
-              >
-                Shipping
-              </Link>
             </nav>
           </div>
 
@@ -99,6 +92,10 @@ export function Footer() {
                 Privacy
               </Link>
 
+              <Link href="/shipping" className="transition hover:text-white">
+                Shipping
+              </Link>
+
               <Link
                 href="/terms"
                 className="transition hover:text-white"
@@ -112,6 +109,7 @@ export function Footer() {
               >
                 Refunds
               </Link>
+
             </nav>
           </div>
 

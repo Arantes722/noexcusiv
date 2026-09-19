@@ -5,11 +5,13 @@ import { useState } from "react";
 type Props = {
   slug: string;
   quantity?: number;
+  selectedKey?: string;
 };
 
 export function CheckoutButton({
   slug,
   quantity = 1,
+  selectedKey,
 }: Props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -27,6 +29,7 @@ export function CheckoutButton({
         body: JSON.stringify({
           slug,
           quantity,
+          key: selectedKey,
         }),
       });
 
